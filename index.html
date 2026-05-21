@@ -4,142 +4,361 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Borough Park Curb Cut Directory</title>
+
   <style>
-    body { margin:0; font-family:Arial, sans-serif; background:#f5f7fa; color:#1f2937; line-height:1.6; }
-    header { background:#fff; border-bottom:1px solid #ddd; padding:35px 20px; text-align:center; }
-    header h1 { margin:0; font-size:34px; color:#111827; }
-    header p { max-width:760px; margin:10px auto 0; color:#4b5563; font-size:17px; }
-    nav { background:#111827; padding:12px; text-align:center; }
-    nav a { color:white; text-decoration:none; margin:0 12px; font-weight:bold; }
-    .container { max-width:1100px; margin:auto; padding:30px 20px; }
-    .notice { background:white; border-left:5px solid #374151; padding:18px 20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.05); margin-bottom:28px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-    .card { background:white; border:1px solid #e5e7eb; border-radius:14px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.06); }
-    .card img { width:100%; height:190px; object-fit:cover; background:#e5e7eb; display:block; }
-    .card-content { padding:18px; }
-    .card h3 { margin:0 0 8px; font-size:22px; color:#111827; }
-    .status { display:inline-block; background:#fef3c7; color:#92400e; padding:5px 9px; border-radius:999px; font-size:13px; font-weight:bold; margin-bottom:10px; }
-    .card p { color:#4b5563; font-size:15px; }
-    .links a { display:block; background:#111827; color:white; text-decoration:none; text-align:center; padding:10px; border-radius:8px; margin-top:8px; font-weight:bold; }
-    .links a.secondary { background:#374151; }
-    footer { margin-top:40px; padding:24px 20px; background:white; border-top:1px solid #e5e7eb; color:#6b7280; font-size:14px; text-align:center; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f4f2;
+      color: #1f2937;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px 45px;
+      background: #fafaf9;
+      border-bottom: 1px solid #d6d3d1;
+    }
+
+    .main-title {
+      font-size: 46px;
+      letter-spacing: 8px;
+      font-weight: 300;
+      margin: 0;
+      color: #111827;
+    }
+
+    .sub-title {
+      margin-top: 14px;
+      font-size: 17px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 30px auto 0;
+      color: #4b5563;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background: #1f2937;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 16px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .section-box {
+      background: white;
+      border: 1px solid #d6d3d1;
+      padding: 30px;
+      margin-bottom: 35px;
+    }
+
+    .section-box h2 {
+      margin-top: 0;
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #111827;
+    }
+
+    .section-box p {
+      color: #4b5563;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .property-card {
+      background: white;
+      border: 1px solid #d6d3d1;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .property-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .property-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .property-content {
+      padding: 24px;
+    }
+
+    .property-content h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 27px;
+      font-weight: 400;
+      color: #111827;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 7px 12px;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+      margin-bottom: 16px;
+    }
+
+    .property-content p {
+      font-family: Arial, sans-serif;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      background: #1f2937;
+      color: white;
+      padding: 12px 18px;
+      margin-right: 10px;
+      margin-top: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .button.secondary {
+      background: #4b5563;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      border-top: 1px solid #d6d3d1;
+      background: #fafaf9;
+      color: #6b7280;
+    }
+
+    footer .footer-title {
+      letter-spacing: 4px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    footer .footer-sub {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+    }
+
+    @media (max-width: 700px) {
+      .main-title {
+        font-size: 34px;
+        letter-spacing: 4px;
+      }
+
+      .sub-title {
+        letter-spacing: 3px;
+      }
+    }
   </style>
 </head>
 
 <body>
+
   <header>
-    <h1>Borough Park Curb Cut Directory</h1>
-    <p>Publicly available records relating to possible unauthorized curb cuts, driveway permits, and related violations in Borough Park.</p>
+    <h1 class="main-title">BOROUGH PARK</h1>
+
+    <div class="sub-title">
+      Curb Cut Directory
+    </div>
+
+    <div class="intro">
+      Publicly available records relating to possible unauthorized curb cuts,
+      driveway permits, historical property conditions, and related violations
+      in Borough Park.
+    </div>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#records">Current Block</a>
-    <a href="#disclaimer">Disclaimer</a>
+    <a href="#">About</a>
+    <a href="#">Properties</a>
+    <a href="#">Public Notice</a>
   </nav>
 
   <main class="container">
-    <section id="about" class="notice">
+
+    <section class="section-box">
       <h2>About This Directory</h2>
-      <p>This directory organizes public information connected to curb cuts and driveway-related records in Borough Park. Each listing is intended to include supporting documentation, such as photos, Department of Buildings records, violations, complaints, or permit search results.</p>
+
+      <p>
+        This directory organizes publicly available records, historical imagery,
+        permit searches, and related documentation concerning curb cuts and
+        driveway alterations within Borough Park.
+      </p>
+
+      <p>
+        Each property page may include historical photographs, Department of
+        Buildings records, permit searches, complaint history, and documented
+        findings connected to the curb cut associated with the property.
+      </p>
     </section>
 
-    <section id="records">
-      <h2>Current Block: Replace With Your Block Name</h2>
-      <p>Example: 14th Avenue between 50th Street and 51st Street</p>
+    <section class="section-box">
 
-      <div class="grid">
+      <h2>Current Properties</h2>
 
-        <article class="card">
-          <img src="https://via.placeholder.com/800x500?text=Photo+1" alt="Street photo">
-          <div class="card-content">
-            <h3>Address 1</h3>
-            <span class="status">Possible Unauthorized Curb Cut</span>
-            <p>Replace this with your short note for this address.</p>
-            <div class="links">
-              <a href="#">View DOB Document</a>
-              <a href="#" class="secondary">View Photo Evidence</a>
+      <div class="properties-grid">
+
+        <div class="property-card">
+          <img src="https://via.placeholder.com/900x600?text=Property+Photo" />
+
+          <div class="property-content">
+
+            <h3>1234 14th Avenue</h3>
+
+            <div class="status">
+              Likely Unauthorized Curb Cut
             </div>
-          </div>
-        </article>
 
-        <article class="card">
-          <img src="https://via.placeholder.com/800x500?text=Photo+2" alt="Street photo">
-          <div class="card-content">
-            <h3>Address 2</h3>
-            <span class="status">Possible Unauthorized Curb Cut</span>
-            <p>Replace this with your short note for this address.</p>
-            <div class="links">
-              <a href="#">View DOB Document</a>
-              <a href="#" class="secondary">View Photo Evidence</a>
-            </div>
-          </div>
-        </article>
+            <p>
+              Historical imagery appears to show a standard curb prior to
+              alteration. No curb-cut permit located in reviewed records.
+            </p>
 
-        <article class="card">
-          <img src="https://via.placeholder.com/800x500?text=Photo+3" alt="Street photo">
-          <div class="card-content">
-            <h3>Address 3</h3>
-            <span class="status">Possible Unauthorized Curb Cut</span>
-            <p>Replace this with your short note for this address.</p>
-            <div class="links">
-              <a href="#">View DOB Document</a>
-              <a href="#" class="secondary">View Photo Evidence</a>
-            </div>
-          </div>
-        </article>
+            <a class="button" href="#">
+              View Case File
+            </a>
 
-        <article class="card">
-          <img src="https://via.placeholder.com/800x500?text=Photo+4" alt="Street photo">
-          <div class="card-content">
-            <h3>Address 4</h3>
-            <span class="status">Possible Unauthorized Curb Cut</span>
-            <p>Replace this with your short note for this address.</p>
-            <div class="links">
-              <a href="#">View DOB Document</a>
-              <a href="#" class="secondary">View Photo Evidence</a>
-            </div>
-          </div>
-        </article>
+            <a class="button secondary" href="#">
+              View Documents
+            </a>
 
-        <article class="card">
-          <img src="https://via.placeholder.com/800x500?text=Photo+5" alt="Street photo">
-          <div class="card-content">
-            <h3>Address 5</h3>
-            <span class="status">Possible Unauthorized Curb Cut</span>
-            <p>Replace this with your short note for this address.</p>
-            <div class="links">
-              <a href="#">View DOB Document</a>
-              <a href="#" class="secondary">View Photo Evidence</a>
-            </div>
           </div>
-        </article>
+        </div>
 
-        <article class="card">
-          <img src="https://via.placeholder.com/800x500?text=Photo+6" alt="Street photo">
-          <div class="card-content">
-            <h3>Address 6</h3>
-            <span class="status">Possible Unauthorized Curb Cut</span>
-            <p>Replace this with your short note for this address.</p>
-            <div class="links">
-              <a href="#">View DOB Document</a>
-              <a href="#" class="secondary">View Photo Evidence</a>
+        <div class="property-card">
+          <img src="https://via.placeholder.com/900x600?text=Property+Photo" />
+
+          <div class="property-content">
+
+            <h3>1240 14th Avenue</h3>
+
+            <div class="status">
+              Possible Unauthorized Curb Cut
             </div>
+
+            <p>
+              Reviewed records presently do not indicate authorization for the
+              current curb condition associated with this property.
+            </p>
+
+            <a class="button" href="#">
+              View Case File
+            </a>
+
+            <a class="button secondary" href="#">
+              View Documents
+            </a>
+
           </div>
-        </article>
+        </div>
+
+        <div class="property-card">
+          <img src="https://via.placeholder.com/900x600?text=Property+Photo" />
+
+          <div class="property-content">
+
+            <h3>1246 14th Avenue</h3>
+
+            <div class="status">
+              Almost Certain Unauthorized Curb Cut
+            </div>
+
+            <p>
+              Historical property imagery appears inconsistent with the present
+              curb condition. Related records and findings attached.
+            </p>
+
+            <a class="button" href="#">
+              View Case File
+            </a>
+
+            <a class="button secondary" href="#">
+              View Documents
+            </a>
+
+          </div>
+        </div>
 
       </div>
+
     </section>
 
-    <section id="disclaimer" class="notice" style="margin-top:32px;">
+    <section class="section-box">
+
       <h2>Public Information Notice</h2>
-      <p>This website is intended for public informational use only.</p>
-      <p>Information displayed on this website is compiled from publicly available records and sources. We do not guarantee accuracy or completeness and assume no responsibility or liability for any actions taken based on the information provided on this website.</p>
+
+      <p>
+        This website is intended for public informational use only.
+      </p>
+
+      <p>
+        Information displayed on this website is compiled from publicly
+        available records and sources. We do not guarantee accuracy or
+        completeness and assume no responsibility or liability for any actions
+        taken based on the information provided on this website.
+      </p>
+
     </section>
+
   </main>
 
   <footer>
-    Borough Park Curb Cut Directory — Public informational use only.
+    <div class="footer-title">
+      Borough Park Curb Cut Directory
+    </div>
+
+    <div class="footer-sub">
+      Public Informational Archive
+    </div>
   </footer>
+
 </body>
 </html>
