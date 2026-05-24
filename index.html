@@ -4,60 +4,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Borough Park Curb Cut Directory</title>
+
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
     .site-header {
-  background: #ffffff;
-  padding: 18px 20px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
+      background: #ffffff;
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
 
-.logo-link {
-  display: inline-block;
-  text-decoration: none;
-}
+    .logo-link {
+      display: inline-block;
+      text-decoration: none;
+    }
 
-.site-logo {
-  max-width: 520px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-    body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#1f2937;line-height:1.6}
-    header{background:white;border-bottom:1px solid #ddd;padding:35px 20px;text-align:center}
-    header h1{margin:0;font-size:34px;color:#111827}
-    header p{max-width:760px;margin:10px auto 0;color:#4b5563;font-size:17px}
-    .container{max-width:900px;margin:auto;padding:30px 20px}
-    .card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:24px;box-shadow:0 4px 12px rgba(0,0,0,.06);margin-bottom:20px}
-    .button{display:inline-block;background:#111827;color:white;text-decoration:none;padding:12px 18px;border-radius:8px;font-weight:bold}
-    footer{text-align:center;color:#6b7280;padding:25px}
+    .site-logo {
+      max-width: 430px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .mission-statement {
+      background: #ffffff;
+      border-left: 5px solid #0D2B45;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+    }
+
+    .mission-statement h2 {
+      margin-top: 0;
+      color: #0D2B45;
+      font-size: 24px;
+    }
+
+    .mission-statement p {
+      margin-bottom: 0;
+      color: #333;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      color: #0D2B45;
+      margin-top: 0;
+    }
+
+    .button {
+      display: inline-block;
+      background: #0D2B45;
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #143B5C;
+    }
+
+    footer {
+      text-align: center;
+      color: #5f6b76;
+      padding: 25px;
+    }
+
+    @media (max-width: 600px) {
+      .site-logo {
+        max-width: 300px;
+      }
+
+      .container {
+        padding: 20px 14px;
+      }
+
+      .mission-statement,
+      .card {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-</header>
-<header class="site-header">
-  <a href="index.html" class="logo-link">
-    <img
-      src="images/curbcut-horizontal-logo.png"
-      alt="Curb Cut Directory"
-      class="site-logo"
-    >
-  </a>
-</header>
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img
+        src="images/curbcut-horizontal-logo.png"
+        alt="Curb Cut Directory"
+        class="site-logo"
+      >
+    </a>
+  </header>
 
   <main class="container">
-  <div class="card">
-    <h2>59th Street between 19th Avenue and 20th Avenue</h2>
-    <p>View documented properties and related curb-cut records for this block.</p>
-    <a class="button" href="block-59th-19th-20th.html">View Block</a>
-  </div>
-</main>
 
-<footer>
-  Borough Park Curb Cut Directory — Public informational use only.
-</footer>
+    <section class="mission-statement">
+      <h2>Our Mission</h2>
+      <p>
+        Unauthorized curb cuts are not victimless. When public curb space is turned into private parking,
+        neighbors lose valuable street parking and the block is changed without proper approval.
+        Curb Cut Directory documents these conditions, organizes available public records, and helps
+        residents better understand how curb cuts and front-yard parking affect Brooklyn neighborhoods.
+      </p>
+    </section>
+
+    <div class="card">
+      <h2>59th Street between 19th Avenue and 20th Avenue</h2>
+      <p>View documented properties and related curb-cut records for this block.</p>
+      <a class="button" href="block-59th-19th-20th.html">View Block</a>
+    </div>
+
+  </main>
+
+  <footer>
+    Borough Park Curb Cut Directory — Public informational use only.
+  </footer>
 
 </body>
 </html>
