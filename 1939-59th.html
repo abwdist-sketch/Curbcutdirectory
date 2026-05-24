@@ -83,7 +83,6 @@
       object-fit: cover;
       display: block;
       background: #e9edf2;
-      cursor: zoom-in;
     }
 
     .content {
@@ -128,6 +127,29 @@
       margin-top: 35px;
       line-height: 1.7;
       color: #333f4a;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #eee;
+      cursor: zoom-in;
+      border: 1px solid var(--border);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .photo-gallery img:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--soft-shadow);
     }
 
     .documents {
@@ -243,6 +265,10 @@
       .property-image {
         height: 300px;
       }
+
+      .photo-gallery img {
+        height: 200px;
+      }
     }
   </style>
 </head>
@@ -269,10 +295,9 @@
     <div class="property-card">
 
       <img
-        src="images/1939-59-2025.png"
-        alt="2025 image showing gated frontage with no visible vehicle access"
+        src="images/1939-59.png"
+        alt="1939 59th Street"
         class="property-image"
-        onclick="openImage(this.src, this.alt)"
       />
 
       <div class="content">
@@ -320,6 +345,18 @@
             This page documents the observed condition and available public records;
             it does not represent a final legal determination.
           </p>
+
+        </div>
+
+        <h2>Photo Record</h2>
+
+        <div class="photo-gallery">
+
+          <img
+            src="images/1939-59-2025.png"
+            alt="2025 image showing gated frontage with no visible vehicle access"
+            onclick="openImage(this.src, this.alt)"
+          >
 
         </div>
 
