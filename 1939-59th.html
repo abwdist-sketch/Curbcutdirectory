@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1935 59th Street</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .property-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .property-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content {
+      padding: 25px;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 36px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .info-box {
+      background: #f7f7f7;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .label {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .value {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .notes {
+      margin-top: 35px;
+      line-height: 1.7;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      background: black;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+    }
+
+    .back-link:hover {
+      background: #333;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      padding-bottom: 40px;
+    }
+
+    .disclaimer {
+      font-size: 13px;
+      color: #777;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>1935 59th Street</h1>
+    <p>Brooklyn, New York</p>
+  </header>
+
+  <div class="container">
+
+    <div class="property-card">
+
+      <img
+        src="images/1935-59.jpg"
+        alt="1935 59th Street"
+        class="property-image"
+      />
+
+      <div class="content">
+
+        <div class="info-grid">
+
+          <div class="info-box">
+            <div class="label">Address</div>
+            <div class="value">1935 59th Street</div>
+          </div>
+
+          <div class="info-box">
+            <div class="label">Borough</div>
+            <div class="value">Brooklyn</div>
+          </div>
+
+          <div class="info-box">
+            <div class="label">Block</div>
+            <div class="value">59th Street</div>
+          </div>
+
+          <div class="info-box">
+            <div class="label">Curb Cut Status</div>
+            <div class="value">Research Pending</div>
+          </div>
+
+        </div>
+
+        <div class="notes">
+
+          <h2>Property Notes</h2>
+
+          <p>
+            This page is part of the Curb Cut Directory project,
+            documenting curb cut and driveway conditions throughout Brooklyn.
+          </p>
+
+          <p>
+            Additional historical records, tax photos,
+            DOB filings, and curb cut determinations
+            may be added over time.
+          </p>
+
+        </div>
+
+        <a href="59th-street.html" class="back-link">
+          ← Back to 59th Street
+        </a>
+
+        <div class="disclaimer">
+          Information presented on this website is for research and informational
+          purposes only and may not reflect official NYC records or legal determinations.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © Curbcut Directory
+  </footer>
+
+</body>
+</html>
