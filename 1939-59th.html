@@ -109,6 +109,39 @@
       margin-top: 20px;
       line-height: 1.6;
     }
+ .photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #eee;
+}
+
+.documents {
+  display: grid;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.documents a {
+  background: #f1f1f1;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.documents a:hover {
+  background: #ddd;
+}
   </style>
 </head>
 
@@ -171,7 +204,29 @@
           </p>
 
         </div>
+</div>
 
+<h2>Photos</h2>
+
+<div class="photo-gallery">
+  <img src="images/1939-59.jpg" alt="Front View">
+  <img src="images/1939-tax.jpg" alt="Tax Photo">
+  <img src="images/1939-historic.jpg" alt="Historic Photo">
+</div>
+
+<h2>Documents</h2>
+
+<div class="documents">
+  <a href="documents/1939-tax-record.pdf" target="_blank">
+    View Tax Record PDF
+  </a>
+
+  <a href="documents/1939-dob-record.pdf" target="_blank">
+    View DOB Record PDF
+  </a>
+</div>
+
+<a href="59th-street.html" class="back-link">
         <a href="59th-street.html" class="back-link">
           ← Back to 59th Street
         </a>
