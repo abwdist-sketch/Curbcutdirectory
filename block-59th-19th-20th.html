@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Borough Park Curb Cut Directory</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>59th Street Block — Curb Cut Directory</title>
 
   <style>
     :root {
@@ -45,12 +45,12 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 32px 20px;
     }
 
-    .mission-statement {
+    .page-intro {
       background: var(--card-bg);
       border-left: 5px solid var(--navy);
       padding: 24px 26px;
@@ -62,41 +62,55 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .mission-statement h2 {
+    .page-intro h1 {
       margin-top: 0;
+      margin-bottom: 8px;
       color: var(--navy);
-      font-size: 24px;
-      letter-spacing: 0.2px;
+      font-size: 28px;
     }
 
-    .mission-statement p {
-      margin-bottom: 0;
-      color: #333f4a;
+    .page-intro p {
+      margin: 0;
+      color: #344150;
       font-size: 17px;
-      line-height: 1.7;
     }
 
-    .card {
+    .address-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .address-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 24px;
+      overflow: hidden;
       box-shadow: 0 4px 14px var(--soft-shadow);
-      margin-bottom: 20px;
     }
 
-    .card h2 {
+    .address-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      background: #e9edf2;
+    }
+
+    .address-content {
+      padding: 20px;
+    }
+
+    .address-content h2 {
+      margin: 0 0 8px 0;
       color: var(--navy);
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 25px;
+      font-size: 22px;
     }
 
-    .card p {
-      color: #344150;
-      margin-top: 0;
-      margin-bottom: 18px;
-      font-size: 16px;
+    .status {
+      color: var(--gray-text);
+      margin-bottom: 16px;
+      font-size: 15px;
     }
 
     .button {
@@ -104,14 +118,21 @@
       background: var(--navy);
       color: white;
       text-decoration: none;
-      padding: 12px 18px;
+      padding: 11px 16px;
       border-radius: 8px;
       font-weight: bold;
-      transition: background 0.2s ease;
     }
 
     .button:hover {
       background: var(--navy-hover);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
@@ -130,19 +151,12 @@
         padding: 22px 14px;
       }
 
-      .mission-statement,
-      .card {
+      .page-intro {
         padding: 20px;
       }
 
-      .mission-statement h2,
-      .card h2 {
-        font-size: 22px;
-      }
-
-      .mission-statement p,
-      .card p {
-        font-size: 16px;
+      .page-intro h1 {
+        font-size: 24px;
       }
     }
   </style>
@@ -162,23 +176,63 @@
 
   <main class="container">
 
-    <section class="mission-statement">
-      <h2>Our Mission</h2>
+    <section class="page-intro">
+      <h1>59th Street between 19th Avenue and 20th Avenue</h1>
       <p>
-        Unauthorized curb cuts are not victimless. When public curb space is turned into private parking,
-        neighbors lose valuable street parking and the block is changed without proper approval.
-        Curb Cut Directory documents these conditions, organizes available public records, and helps
-        residents better understand how curb cuts and front-yard parking affect Brooklyn neighborhoods.
+        Documented properties and related curb-cut records for this block.
       </p>
     </section>
 
-    <div class="card">
-      <h2>59th Street between 19th Avenue and 20th Avenue</h2>
-      <p>
-        View documented properties and related curb-cut records for this block.
-      </p>
-      <a class="button" href="block-59th-19th-20th.html">View Block</a>
+    <div class="address-grid">
+
+      <div class="address-card">
+        <img src="images/1933-59.png" alt="1933 59th Street">
+        <div class="address-content">
+          <h2>1933 59th Street</h2>
+          <div class="status">Curb Cut Status: Research Pending</div>
+          <a class="button" href="1933-59th.html">More Info</a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <img src="images/1935-59.png" alt="1935 59th Street">
+        <div class="address-content">
+          <h2>1935 59th Street</h2>
+          <div class="status">Curb Cut Status: Research Pending</div>
+          <a class="button" href="1935-59th.html">More Info</a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <img src="images/1939-59.png" alt="1939 59th Street">
+        <div class="address-content">
+          <h2>1939 59th Street</h2>
+          <div class="status">Curb Cut Status: Research Pending</div>
+          <a class="button" href="1939-59th.html">More Info</a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <img src="images/1941-59.png" alt="1941 59th Street">
+        <div class="address-content">
+          <h2>1941 59th Street</h2>
+          <div class="status">Curb Cut Status: Research Pending</div>
+          <a class="button" href="1941-59th.html">More Info</a>
+        </div>
+      </div>
+
+      <div class="address-card">
+        <img src="images/1959-59.png" alt="1959 59th Street">
+        <div class="address-content">
+          <h2>1959 59th Street</h2>
+          <div class="status">Curb Cut Status: Research Pending</div>
+          <a class="button" href="1959-59th.html">More Info</a>
+        </div>
+      </div>
+
     </div>
+
+    <a href="index.html" class="back-link">← Back to Main Page</a>
 
   </main>
 
